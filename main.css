@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/*2d7d98*/
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero-bg{
+    background: #fc7658 url('../images/bg.jpg');
+    /* background-position: 40% 32%; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ddd;
+    text-align: center;
+    /* padding-bottom: 4em; */
+}
+
+.card-overlay {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+header{
+    padding: 1em 0em;
+}
+
+.hero-bg a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2 rem;
+}
+
+section{
+    margin: 0em 1em;
+    padding-bottom: 4em;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin: 2em 0em 1.2em;
+}
+
+h1 span{
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 span::before{
+    content: ' ';
+    position: absolute;
+    background-color: #fc7658;
+    height: .4em;
+    width: 3.6em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.2em;
+}
+
+.hero-bg p{
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+
+.form-container{
+    background-color: rgba(83, 82, 82, 0.4);
+    margin: 2em -1em 0em;
+    padding: 2em;
+}
+
+label{
+    color: #fc7658;
+    font-weight: bold;
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+input[type=text]{
+    border: 2px solid rgba(252, 118, 88, .3);
+    background-color: rgba(110, 110, 110, 0.3);
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: .5em;
+    margin-top: 1.2em;
+}
+
+.form-container p{
+    color: #929191;
+    font-weight: normal;
+    font-size: .9em;
+    margin: .3em 0 1.5em;
+}
+
+input[type=button]{
+    background-color: rgba(252, 118, 88, .8);
+    border: none;
+    width: 100%;
+    padding: 1em 0;
+    border-radius: .5em;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: white;
+    cursor: pointer;
+}
+
+input[type=button]:hover{
+    background-color: #ca5e46;
+}
+
+.authentic{
+    margin: 0;
+}
+
+.right-col{
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2{
+    text-transform: uppercase;
+    position: relative;
+    z-index: -1;
+}
+
+h2::before{
+    content: ' ';
+    position: absolute;
+    background-color: #fc7658;
+    height: .4em;
+    width: 8em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.2em;
+}
+
+p{
+    line-height: 2em;
+}
+
+img{
+    width: 85%;
+    display: block;
+    margin: auto;
+    padding: auto;
+    border-radius: 13px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+}
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    place-content: center;
+    color: white;
+    display: none;
+    opacity: 0;
+}
+
+.animate-overlay{
+    animation: overlay 3s forwards;
+}
+
+@media (min-width: 730px){
+    section{
+        margin: 0em 4em;
+    }
+    .form-container{
+        margin: 2em -1em 0em;
+    }
+    img{
+        width: 60%;
+    }
+}
+@media (min-width: 930px){
+    .hero-bg{
+        text-align: left;
+    }
+    .hero-bg p{
+        margin: 0 0em 3em;
+    }
+    .hero-bg section{
+        width: 65%;
+    }
+    .form-container{
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+    }
+
+    form{
+        display: flex;
+    }
+    .form-left{
+        width: 70%;
+    }
+    label{
+        margin: 0;
+    }
+    input[type=button]{
+        height: fit-content;
+        font-size: 1.1em;
+        margin-left: 2em;
+        padding: .7em 0;
+        margin-top: 2.2em;
+        width: 30%;
+    }
+    .hero-bg p{
+        margin-bottom: 0;
+    }
+    section.authentic{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas: "bed content";
+        margin-top: 3em;
+    }
+    .right-col{
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+    img{
+        grid-area: bed;
+        width: 70%;
+        align-self: center;
+    }
+    h2{
+        margin: 0;
+    }
+    section.top {
+        padding-bottom: 8.6em;
+    }
+}
+
+.top{
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlay {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
